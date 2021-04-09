@@ -24,8 +24,8 @@ Instanaは 180を超えるテクノロジーに対応したセンサーをInstan
 ## ハンズオン環境の準備
 このハンズオンでは、Instana のサンドボックス環境である **Play with Instana** を利用して、実際に稼働する Instana の環境を確認していきます。
 
-[Play with Instana](https://www.instana.com/getting-started-with-apm/) を開き、**Play with Instana**のボタンをクリックします。  
-メール・アドレスを入力して、Play with Instana を開始してください。。  
+[Play with Instana](https://www.instana.com/getting-started-with-apm/) をクリックしますと、以下の画面が開きますので、**Play with Instana**のボタンをクリックします。  
+メール・アドレスを入力して、Play with Instana を開始してください。  
 ![image](https://user-images.githubusercontent.com/22209835/114133781-8cdab700-9941-11eb-93f8-0c1e6ec5656a.png)
 
 ここまで、準備できたら、こちらから、Step By Stepのハンズオンを開始しましょう。
