@@ -19,11 +19,12 @@ Instanaは 180を超えるテクノロジーに対応したセンサーをInstan
 ### AI/MLの提供
 各サービスのモニタリングには、ゴールデン・シグナルに対して 機械学習を適用して監視を行っています。これにより応答性能の変化など 単純なしきい値監視では拾うことができない、通常とは異なる振る舞いを インシデントとして拾うことが可能になっています。インシデントの通知を上げる際には、上で述べたようにそのサービスが稼働するアプリケーションのコンテキストを理解していますので、前後上下関連コンポーネントでのイベントもあわせて整理して通知することが可能です。これにより、問題判別、課題解決への時間を短縮していくことが可能です。
 
+---
 
 ## ハンズオン環境の準備
 このハンズオンでは、Instana のサンドボックス環境である **Play with Instana** を利用して、実際に稼働する Instana の環境を確認していきます。
 
-[Play with Instana](https://www.instana.com/getting-started-with-apm/) を開き、**Play with Instana**のボタンをクリックします。
+[Play with Instana](https://www.instana.com/getting-started-with-apm/) を開き、**Play with Instana**のボタンをクリックします。  
 メール・アドレスを入力して、Play with Instana を開始してください。。  
 ![image](https://user-images.githubusercontent.com/22209835/114133781-8cdab700-9941-11eb-93f8-0c1e6ec5656a.png)
 
