@@ -1,4 +1,4 @@
-### ダッシュボード
+## ダッシュボード
 Play with Instana を開くと、以下のような画面が表示されます。エージェントを追加構成することができない、変更ができないなどをのぞけば、実際のInstanaと同様の画面です。  
 英語のガイドも右下に表示されていますので、そちらをやって頂いてもいいですが、一旦閉じておきましょう。  
 ![image](https://user-images.githubusercontent.com/22209835/114136663-0b395800-9946-11eb-922d-b9fba5781ee4.png)
@@ -11,7 +11,7 @@ Play with Instana を開くと、以下のような画面が表示されます�
 
 ---
 
-### Infrastructure 
+## Infrastructure 
 インフラストラクチャでは、エージェントが導入されている各ホストノードが 一元化されて把握できるようになっています。  
 エージェント導入時には、ゾーンを関連づけることができるので、クラウドのゾーンだけでなく、東京データセンター、大阪災体データセンターなど、自由に関連付けて管理することが可能です・
 ![image](https://user-images.githubusercontent.com/22209835/114137453-37a1a400-9947-11eb-9b00-7e66700eca23.png)
@@ -35,3 +35,6 @@ CPUやメモリの利用量から、Open Files数、File Systemの情報、ネ�
 ![image](https://user-images.githubusercontent.com/22209835/114139481-142c2880-994a-11eb-8bd1-541edfcc335a.png)
 
 ---
+## Platform
+つぎにアプリケーションが稼働するプラットフォームを見ていきましょう。KubernetesやCloudFoundry、この環境には表示されていませんが vSphere の情報も見ていくことが可能です。
+![image](https://user-images.githubusercontent.com/22209835/114139901-8f8dda00-994a-11eb-9b09-bde2f587499c.png)
