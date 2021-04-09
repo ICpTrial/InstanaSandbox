@@ -31,7 +31,7 @@ Play with Instana を開くと、以下のような画面が表示されます�
 ノード情報の上の方にある 緑色の **Open Dashboard** の画面を開きます。ノードのリソースの詳細情報が確認できます。  
 CPUやメモリの利用量から、Open Files数、File Systemの情報、ネットワークのアクティビティなど、基盤的な情報を確認することができます。
 ![image](https://user-images.githubusercontent.com/22209835/114138732-032ee780-9949-11eb-8091-28005f6e4a71.png)
-
-
+上の **Stack**タブをクリックすると、このノードで稼働している アプリケーションやKubernetesのスタックの情報が確認できます。
+![image](https://user-images.githubusercontent.com/22209835/114139481-142c2880-994a-11eb-8bd1-541edfcc335a.png)
 
 ---
