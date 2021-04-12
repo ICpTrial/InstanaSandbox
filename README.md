@@ -30,9 +30,9 @@ Instanaは 180を超えるテクノロジーに対応したセンサーをInstan
 
 ここまで、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)を開始しましょう。
 
-|章||
---|--
-|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)|
-|2|[Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md)|
+|章|ハンズオンリンク|備考
+--|--|--
+|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)|基盤およびKubernetes/CloudFoundryなどプラットフォーム|
+|2|[Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Application.md)|マイクロサービス・アプリケーションの可視化|
 |3|WebSites & Mobile|
 |4|Events|
