@@ -34,23 +34,31 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 ![image](https://user-images.githubusercontent.com/22209835/114328413-83d32b00-9b77-11eb-82cf-ceed09b80092.png)
 左上の メニューを選択することで、応答性能が遅いサービスのアイコンを大きくしたり、要求数の大きいサービスを大きくしたり、わかりやすく可視化できますので、いろいろ触ってみてください。　　
 ![image](https://user-images.githubusercontent.com/22209835/114328451-a49b8080-9b77-11eb-8b8e-ee7c427bbd11.png)
-たとえば、Databaseのサービスを選んで、サービスのダッシュボードに移動してみましょう。  どれでもいいですが、以下の例では、**cities**という MySQLのサービスを開きます。
+たとえば、Databaseのサービスを選んで、サービスのダッシュボードに移動してみましょう。  
+どれでもいいですが、以下の例では、**cities**という MySQLのサービスを開きます。
 ![image](https://user-images.githubusercontent.com/22209835/114330307-62c10900-9b7c-11eb-846f-d84a3547b5a9.png)
 開くと、citiesサービスの詳細が表示されています。右下には、応答時間がかかっているSQLが順に表示されています。
 ![image](https://user-images.githubusercontent.com/22209835/114330341-73717f00-9b7c-11eb-981b-2dacf702c549.png)
  
 ---
 ### アプリケーションの問題切り分け
-＊＊Summary**のダッシュボードに戻ります。
+**Summary**のダッシュボードに戻ります。
+エラーとなっているコールがありますので、ここを確認していきましょう。  
 ![image](https://user-images.githubusercontent.com/22209835/114329793-3e186180-9b7b-11eb-9dd4-cd363cd1ee1a.png)
-
+中央の エラーコール率のグラフの山を選択して、**View in Analyze**で解析画面で確認していきます。
 ![image](https://user-images.githubusercontent.com/22209835/114329771-2e008200-9b7b-11eb-8da1-58dab02b41c3.png)
-
+アプリケーションを理解していれば、より具体的にアクションが採れるかもしれませんが、ここでは、一番エラー数の多い上の **eum-frontend**を選択します。  
+タイミングによって、起きているエラーは異なりますので、環境に応じて 一番多いエラーを選択して開いて下さい。
 ![image](https://user-images.githubusercontent.com/22209835/114329840-5c7e5d00-9b7b-11eb-9926-f7f1f0cc29c1.png)
+ここでは、エラーを返している **eum-frontend**の要求がリストされています。軒並み応答性能が5000ミリ秒を超えてエラーとなっているようです。
 ![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
+一番上のエラー要求をクリックして、要求の中身をみていきます。
 ![image](https://user-images.githubusercontent.com/22209835/114329913-7c158580-9b7b-11eb-8843-5767842cbb98.png)
+この GET /zh_cn/shopの詳細がわかります。中身を確認しながらスクロールダウンしてください。
 ![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
+タイムラインのビューでは、この要求に関連して実行された マイクロサービスの呼び出し関係が可視化されています。
 ![image](https://user-images.githubusercontent.com/22209835/114329959-a0716200-9b7b-11eb-8eaa-bd8b8fe06ecf.png)
+さらに コールのビューまでいくと、各マイクロサービスの呼び出しの依存関係 呼び出し元と呼び出し先が確認できます。
 ![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
 ![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
 
