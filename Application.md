@@ -42,6 +42,7 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
  
 ---
 ### アプリケーションの問題切り分け
+
 **Summary**のダッシュボードに戻ります。
 エラーとなっているコールがありますので、ここを確認していきましょう。  
 ![image](https://user-images.githubusercontent.com/22209835/114329793-3e186180-9b7b-11eb-9dd4-cd363cd1ee1a.png)
@@ -65,8 +66,8 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 ![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
 問題となっている MySQLサービスをクリックすると、当該時間帯に Offlineが検知されているのが分かります。
 ![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
-  
 このようなかたちで、エラー応答となったマイクロサービスの依存関係を解析した上で、問題の根本原因の分析へと絞り込んでいくことが可能です。
+
 ---
 ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
 次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる **WebSites & Mobile**をみていきます。
