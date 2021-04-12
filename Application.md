@@ -50,22 +50,23 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 アプリケーションを理解していれば、より具体的にアクションが採れるかもしれませんが、ここでは、一番エラー数の多い上の **eum-frontend**を選択します。  
 タイミングによって、起きているエラーは異なりますので、環境に応じて 一番多いエラーを選択して開いて下さい。
 ![image](https://user-images.githubusercontent.com/22209835/114329840-5c7e5d00-9b7b-11eb-9926-f7f1f0cc29c1.png)
-ここでは、エラーを返している **eum-frontend**の要求がリストされています。軒並み応答性能が5000ミリ秒を超えてエラーとなっているようです。
-![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
+ここでは、エラーを返している **eum-frontend**の要求がリストされています。  
+軒並み応答性能が5000ミリ秒を超えてエラーとなっているようですね。これらについて詳細を確認していきましょう。  
 一番上のエラー要求をクリックして、要求の中身をみていきます。
+![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
+この `GET /zh_cn/shop`要求の詳細がわかります。中身を確認しながらスクロールダウンしてください。
 ![image](https://user-images.githubusercontent.com/22209835/114329913-7c158580-9b7b-11eb-8843-5767842cbb98.png)
-この GET /zh_cn/shopの詳細がわかります。中身を確認しながらスクロールダウンしてください。
-![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
 タイムラインのビューでは、この要求に関連して実行された マイクロサービスの呼び出し関係が可視化されています。
+![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
+さらにコールのビューまでいくと、各マイクロサービスの呼び出しの依存関係 呼び出し元と呼び出し先が確認できます。
 ![image](https://user-images.githubusercontent.com/22209835/114329959-a0716200-9b7b-11eb-8eaa-bd8b8fe06ecf.png)
-さらに コールのビューまでいくと、各マイクロサービスの呼び出しの依存関係 呼び出し元と呼び出し先が確認できます。
+マイクロサービスの一番下で、DATABASE（MySQLサービス）への CONNECT要求が5000ミリ秒でタイム・アウトし、エラーなっているのが分かります。
+右のペーンには、エラーの内容と、問題が発生したコードのスタックトレースが表示されています。
 ![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
+問題となっている MySQLサービスをクリックすると、当該時間帯に Offlineが検知されているのが分かります。
 ![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
-
-
-
-
-
-
-
-![Uploading image.png…]()
+  
+このようなかたちで、エラー応答となったマイクロサービスの依存関係を解析した上で、問題の根本原因の分析へと絞り込んでいくことが可能です。
+---
+ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
+次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる **WebSites & Mobile**をみていきます。
