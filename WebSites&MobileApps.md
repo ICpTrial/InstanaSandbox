@@ -7,10 +7,11 @@ Instana では、ブラウザやモバイル・アプリケーションなど、
 ---
 ### WebSitesのダッシュボード
 1. Instanaの画面から、**WebSites&MobileApps**を開いて、見ていきましょう。  
-なおこのサンドボックスの環境には、モバイル・アプリケーションのアプリケーションは用意されていませんので、ここではWebSiteのみをみていきます。  
-1. 定義されている **robotshop**を開きます。
-WebSitesモニタリングでは、各ブラウザに埋め込まれたエージェントから、直接Instanaのインスタンスにパフォーマンス状況が送信されます。  
+なおこのサンドボックスの環境には、モバイル・アプリケーションのアプリケーションは用意されていませんので、ここではWebSiteのみをみていきます。    
 ![image](https://user-images.githubusercontent.com/22209835/114339724-d9680180-9b90-11eb-86d7-de14ab79ecab.png)
+1. 定義されている **robotshop**を開きます。
+![image](https://user-images.githubusercontent.com/22209835/114354250-eb559e80-9ba8-11eb-9258-502fe5675bd3.png)
+WebSitesモニタリングでは、各ブラウザに埋め込まれたエージェントから、直接Instanaのインスタンスにパフォーマンス状況が送信されてます。
 [注] このサンドボックスでは、Instanaの機能をお見せするために個別ユーザーを特定できる情報まで送信していますが、デフォルトでは 個人を特定できる情報は送信されません。UserAPIを使用するよう管理者の構成が必要となります。  
 WebSitesモニタリングで送信される情報については、[こちら](https://www.instana.com/docs/website_monitoring/faq/#what-are-you-doing-with-the-user-data-transmitted-to-instana)をご確認ください。
 
