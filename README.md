@@ -28,4 +28,4 @@ Instanaは 180を超えるテクノロジーに対応したセンサーをInstan
 メール・アドレスを入力して、Play with Instana を開始してください。  
 ![image](https://user-images.githubusercontent.com/22209835/114133781-8cdab700-9941-11eb-93f8-0c1e6ec5656a.png)
 
-ここまで、準備できたら、こちらから、Step By Stepのハンズオンを開始しましょう。
+ここまで、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)を開始しましょう。
