@@ -39,6 +39,6 @@ Ratings の JavaScriptのどの行で どんなエラーが返されているか
 ![image](https://user-images.githubusercontent.com/22209835/114341141-07027a00-9b94-11eb-92c0-2462f7c4b04e.png)
 
 ---
-ここまでで、**WebSites&MobileApps**のハンズオンは終了です。最後は、Eventsを見ていきましょう。
+ここまでで、**WebSites&MobileApps**のハンズオンは終了です。最後は、[Events](https://github.com/ICpTrial/InstanaSandbox/blob/main/Events.md)を見ていきましょう。
 
 
