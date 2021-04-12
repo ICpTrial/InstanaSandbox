@@ -56,5 +56,5 @@ Kubernetesの各種リソースがタブとして整理されていますので�
 ---
 これで **Infrastructure & Platform** の確認は終わりです。  
 様々な環境に関わるリソース情報が整理され、それぞれ関連付けられて、コンソールに統合されていることが理解頂けたと思います。  
-次に [Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Application.md) を見ていきたいと思います。
+次に [Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md) を見ていきたいと思います。
 
