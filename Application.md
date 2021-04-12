@@ -4,6 +4,9 @@
 Instanaの右のメニューから、**Applications**のアイコンをクリックしてください。
 ![image](https://user-images.githubusercontent.com/22209835/114327991-3efac480-9b76-11eb-98a9-5bd536f758ac.png)
 
+---
+### マイクロサービスの可視化
+
 **Applications**と **Services**の２つのタブがありますが、まずは**Services**から見ていきます。  
 ここには、Instanaのエージェントが検知したアプリケーション・サービスがリストされています。  
 各行に、個々のサービスのテクノロジーやそのタイプ（HTTPやDATABASE, MESSAGINGなど）、および 各サービスのゴールデン・シグナル（コール数、応答性能、エラー率）が表示されています。  
@@ -32,5 +35,7 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 左上の メニューを選択することで、応答性能が遅いサービスのアイコンを大きくしたり、要求数の大きいサービスを大きくしたり、わかりやすく可視化できますので、いろいろ触ってみてください。
 ![image](https://user-images.githubusercontent.com/22209835/114328451-a49b8080-9b77-11eb-8b8e-ee7c427bbd11.png)
 その他の Services や Error Messages、LogMessages のタブも見てみてください。  
-  
+ 
+---
+### アプリケーションの問題切り分け
 ＊＊Summary**のダッシュボードに戻ります。
