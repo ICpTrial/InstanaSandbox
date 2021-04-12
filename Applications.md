@@ -71,4 +71,4 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 
 ---
 ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
-次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps)をみていきます。
+次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)をみていきます。
