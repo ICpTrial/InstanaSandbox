@@ -42,3 +42,19 @@ CPUやメモリの利用量から、Open Files数、File Systemの情報、ネ�
 public-demo-cluster のリンクをクリックして、見ていきましょう。
 ![image](https://user-images.githubusercontent.com/22209835/114140147-dda2dd80-994a-11eb-9223-96d9965d9350.png)
 
+各クラスター全体のダッシュボードが開きます。  
+CPUやメモリーなどのリソース状況、利用状況上位のノードや名前空間のリストがあります。
+![image](https://user-images.githubusercontent.com/22209835/114326924-f80ad000-9b71-11eb-9e7c-ed8fcf86d5c1.png)
+先程と同様、メニューの **Stack**をクリックすると、このクラスターに関係する アプリケーションやInfrastructure の情報がリストされて表示されます。
+![image](https://user-images.githubusercontent.com/22209835/114327073-7d8e8000-9b72-11eb-8b3b-c447edcb0f7e.png)
+Kubernetesの各種リソースがタブとして整理されていますので、確認してみてください。  
+とくに Pod のタブでは、リソースの Requests/Limitsの値をグラフィカルに表示することもできますので、どの名前空間のPodがリソースを消費する設定となっているかなど確認することができます。
+![image](https://user-images.githubusercontent.com/22209835/114327147-d1996480-9b72-11eb-9f7e-c222c07bba7d.png)
+気になる Podがあれば、その Podの情報をクリックすることで、Podのダッシュボードに移動し、実際のリソース利用状況などを確認できます。
+![image](https://user-images.githubusercontent.com/22209835/114327227-23da8580-9b73-11eb-87eb-902bf9fe4d4b.png)
+
+---
+これで **Infrastructure & Platform ** の確認は終わりです。  
+様々な環境に関わるリソース情報が整理され、それぞれ関連付けられて、コンソールに統合さｒていることが理解頂けたと思います。  
+次に Application を見ていきたいと思います。
+
