@@ -32,10 +32,32 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 ![image](https://user-images.githubusercontent.com/22209835/114328391-74ec7880-9b77-11eb-931e-dafc0529b079.png)
 ひとつのサービスにカーソルを合わせて見ましょう。そのサービスと依存関係のあるサービスのみにフォーカスが当たります。
 ![image](https://user-images.githubusercontent.com/22209835/114328413-83d32b00-9b77-11eb-82cf-ceed09b80092.png)
-左上の メニューを選択することで、応答性能が遅いサービスのアイコンを大きくしたり、要求数の大きいサービスを大きくしたり、わかりやすく可視化できますので、いろいろ触ってみてください。
+左上の メニューを選択することで、応答性能が遅いサービスのアイコンを大きくしたり、要求数の大きいサービスを大きくしたり、わかりやすく可視化できますので、いろいろ触ってみてください。　　
 ![image](https://user-images.githubusercontent.com/22209835/114328451-a49b8080-9b77-11eb-8b8e-ee7c427bbd11.png)
-その他の Services や Error Messages、LogMessages のタブも見てみてください。  
+たとえば、Databaseのサービスを選んで、サービスのダッシュボードに移動してみましょう。  どれでもいいですが、以下の例では、**cities**という MySQLのサービスを開きます。
+![image](https://user-images.githubusercontent.com/22209835/114330307-62c10900-9b7c-11eb-846f-d84a3547b5a9.png)
+開くと、citiesサービスの詳細が表示されています。右下には、応答時間がかかっているSQLが順に表示されています。
+![image](https://user-images.githubusercontent.com/22209835/114330341-73717f00-9b7c-11eb-981b-2dacf702c549.png)
  
 ---
 ### アプリケーションの問題切り分け
 ＊＊Summary**のダッシュボードに戻ります。
+![image](https://user-images.githubusercontent.com/22209835/114329793-3e186180-9b7b-11eb-9dd4-cd363cd1ee1a.png)
+
+![image](https://user-images.githubusercontent.com/22209835/114329771-2e008200-9b7b-11eb-8da1-58dab02b41c3.png)
+
+![image](https://user-images.githubusercontent.com/22209835/114329840-5c7e5d00-9b7b-11eb-9926-f7f1f0cc29c1.png)
+![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
+![image](https://user-images.githubusercontent.com/22209835/114329913-7c158580-9b7b-11eb-8843-5767842cbb98.png)
+![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
+![image](https://user-images.githubusercontent.com/22209835/114329959-a0716200-9b7b-11eb-8eaa-bd8b8fe06ecf.png)
+![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
+![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
+
+
+
+
+
+
+
+![Uploading image.png…]()
