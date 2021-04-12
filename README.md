@@ -29,3 +29,10 @@ Instanaは 180を超えるテクノロジーに対応したセンサーをInstan
 ![image](https://user-images.githubusercontent.com/22209835/114133781-8cdab700-9941-11eb-93f8-0c1e6ec5656a.png)
 
 ここまで、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)を開始しましょう。
+
+|章||
+--|--
+|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)|
+|2|[Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md)|
+|3|WebSites & Mobile|
+|4|Events|
