@@ -15,7 +15,7 @@ Play with Instana を開くと、以下のような画面が表示されます�
 
 ## Infrastructure 
 1. インフラストラクチャでは、エージェントが導入されている各ホストノードが 一元化されて把握できるようになっています。  
-エージェントには、ゾーンを関連づけ、カスタマイズすることもできるので、クラウドのゾーンだけでなく、東京データセンター、大阪災体データセンターなど、自由に関連付けて管理することが可能です・
+エージェントには、ゾーンを関連づけ、カスタマイズすることもできるので、クラウドのゾーンだけでなく、東京データセンター、大阪災体データセンターなど、自由に関連付けて管理することが可能です。
 ![image](https://user-images.githubusercontent.com/22209835/114137453-37a1a400-9947-11eb-9b00-7e66700eca23.png)
 1. 上の **Comparison Table** をクリックすると、一覧表示で、ホストや各種コンテナーをリストアップできます。再び **Map**に戻ります。
 ![image](https://user-images.githubusercontent.com/22209835/114139190-b0a1fb00-9949-11eb-917c-580192ddfffb.png)
@@ -38,7 +38,7 @@ CPUやメモリの利用量から、Open Files数、File Systemの情報、ネ�
 
 ---
 ## Platform
-1. つぎにアプリケーションが稼働するプラットフォームを見ていきましょう。KubernetesやCloudFoundry、この環境には表示されていませんが vSphere の情報も見ていくことが可能です。
+1. つぎにアプリケーションが稼働するプラットフォームを見ていきましょう。KubernetesやCloudFoundry、この環境には表示されていませんが vSphereや PowerVM の情報も見ていくことが可能です。
 ![image](https://user-images.githubusercontent.com/22209835/114139901-8f8dda00-994a-11eb-9b09-bde2f587499c.png)
 1. ひとつ定義されている public-demo-cluster が確認できます。右端のHealthはグリーンで大きな問題はないようですね。  
 public-demo-cluster のリンクをクリックして、見ていきましょう。
@@ -58,5 +58,5 @@ CPUやメモリーなどのリソース状況、利用状況上位のノード�
 ---
 これで **Infrastructure & Platform** の確認は終わりです。  
 様々な環境に関わるリソース情報が整理され、それぞれ関連付けられて、コンソールに統合されていることが理解頂けたと思います。  
-次に [Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md) を見ていきたいと思います。
+次にトレースとログの解析結果を可視化している [Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md) を見ていきたいと思います。
 
