@@ -24,9 +24,9 @@ Kubernetes環境のうような継続的にアプリケーションが変化し�
 ## Observability を構成する3つの要素
 
 CNCF の TAG_Obserability(※Technical Advisory Group)では、Observability を構成する プライマリー・シグナルとして、以下の３つをあげています。
-* メトリック
-* トレース
-* ログ
+* メトリック　：ある一定期間の状態を集計可能な数値で表現したもの。
+* ログ ：個別の事象を表す、構造化された、あるいは人間が読める詳細な情報
+* トレース　： システム内の単一のエンティティ（リクエストやトランザクションなど）のライフサイクルを表現するメタ・データの集合
 
 <img width="629" alt="image" src="https://user-images.githubusercontent.com/22209835/171099082-dd4d6b2a-427d-4261-a6ba-94f3ed489bc6.png">
 
