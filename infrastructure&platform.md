@@ -8,7 +8,7 @@ Play with Instana を開くと、以下のような画面が表示されます�
 ![image](https://user-images.githubusercontent.com/22209835/114136972-7aaf4780-9946-11eb-8049-dd72def3e636.png)
 
 このサンドボック環境で IBM Observability with Instana を、順に見ていきましょう。  
-まず Infrastructure & Platform の足回りから見ていきます。  
+まず 取得した各種メトリックが統合されている Infrastructure & Platform の足回りから見ていきます。  
 なお、このサンドボックス環境は実際にバックエンドで動いていて、擬似的に問題も発生させている環境ですので、開いたタイミングによって 表示される内容や発生するエラーは異なりますので、ご留意ください。
 
 ---
