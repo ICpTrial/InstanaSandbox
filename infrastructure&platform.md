@@ -58,6 +58,13 @@ CPUやメモリーなどのリソース状況、利用状況上位のノード�
 ![image](https://user-images.githubusercontent.com/22209835/114327227-23da8580-9b73-11eb-87eb-902bf9fe4d4b.png)
 
 ---
+【参考】  
+このPlayWithInstanaのサンドボックス環境には含まれていませんが、製品版では Open Betaのステータスで Kubernetesの各コンテナの出力するログ・メッセージをInstanaで集約表示する Kubernetes Logging 機能を提供しています。
+クラスター、名前空間、Pod、コンテナーの各レベルにおいて、ログ・メッセージを表示することが可能です。また解析機能を使って、サービスごとにまとめて表示するなど、Kubernetes/OpenShift環境での問題判別が加速する機能ですね。GAして早くお届けできることを楽しみにしています。
+<img width="2043" alt="image" src="https://user-images.githubusercontent.com/22209835/189812350-526eac91-67ff-44f6-9c50-b1b5e2105c88.png">
+<img width="1993" alt="image" src="https://user-images.githubusercontent.com/22209835/189812434-586521f3-cd69-451f-a656-0eef6595dc6a.png">
+
+---
 これで **Infrastructure & Platform** の確認は終わりです。  
 様々な環境に関わるリソース情報が整理され、それぞれ関連付けられて、コンソールに統合されていることが理解頂けたと思います。  
 次にトレースとログの解析結果を可視化している [Application](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md) を見ていきたいと思います。
