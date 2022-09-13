@@ -17,22 +17,23 @@ Play with Instana を開くと、以下のような画面が表示されます�
 ## Infrastructure 
 1. インフラストラクチャでは、エージェントが導入されている各ホスト・ノードが 一元化されて把握できるようになっています。  
 エージェントには、ゾーンを関連づけ、カスタマイズすることもできるので、クラウドのゾーンだけでなく、東京データセンター、大阪災体データセンターなど、自由に関連付けて管理することが可能です。
-![image](https://user-images.githubusercontent.com/22209835/114137453-37a1a400-9947-11eb-9b00-7e66700eca23.png)
-1. 上の **Comparison Table** をクリックすると、一覧表示で、ホストや各種コンテナーをリストアップできます。再び **Map**に戻ります。
-![image](https://user-images.githubusercontent.com/22209835/114139190-b0a1fb00-9949-11eb-917c-580192ddfffb.png)
+　　<img width="1909" alt="image" src="https://user-images.githubusercontent.com/22209835/189789923-e0d18859-31e8-44e3-b1d2-9f5f1572c46c.png">
+
+1. 上の **Comparison Table** をクリックすると、一覧表示で、ホストや各種コンテナーをリストアップできます。再び **Map**に戻ります。　　
+　　<img width="1908" alt="image" src="https://user-images.githubusercontent.com/22209835/189789980-88622203-64c3-4b16-a518-27c03932e659.png">
 
 1. 色が付いているブロックがあれば、そこは問題が発生している環境です（環境のタイミングによって、存在するとはかぎりません）。例えば、上の黄色のブロックは TCP再送が永久に繰り返されてノード自体の問題が疑われるノードです。
-![image](https://user-images.githubusercontent.com/22209835/114138096-168d8300-9948-11eb-9ce3-5b17856c369f.png)
+  ![image](https://user-images.githubusercontent.com/22209835/114138096-168d8300-9948-11eb-9ce3-5b17856c369f.png)
 
 
 
 1. **k8sdemo**は、Kubernetes環境のノードです。クリックすると、そのノードで検知されているテクノロジーのスタックが表示されます。  
-左にはそのノードの詳細が表示されます。ホスト名から gkeで稼働するKubernetesの WorkerNodeであることが分かります。
+左にはそのノードの詳細が表示されます。ホスト名から分かるように gkeで稼働するKubernetesの WorkerNodeです。
 ![image](https://user-images.githubusercontent.com/22209835/114138304-68cea400-9948-11eb-9692-e26f9c429d62.png)
 1. ノード情報の下の方には、そのノードで稼働する各種サービスのスタックが表示されています。それそれリンクになっていますので、検知されたサービスのダッシュボードへと飛ぶことも可能です。
 ![image](https://user-images.githubusercontent.com/22209835/114138551-c4992d00-9948-11eb-92b3-fa60ffe25499.png)
 1. ノード情報の上の方にある 緑色の **Open Dashboard** の画面を開きます。ノードのリソースの詳細情報が確認できます。  
-CPUやメモリの利用量から、Open Files数、File Systemの情報、ネットワークのアクティビティなど、基盤的な情報を確認することができます。
+CPUやメモリの利用量から、Open Files数、File Systemの情報、ネットワークのアクティビティなど、基盤的な情報を確認することができます。メトリックは１秒単位の高精細なデータで、スパイクを見逃しません。
 ![image](https://user-images.githubusercontent.com/22209835/114138732-032ee780-9949-11eb-8091-28005f6e4a71.png)
 1. 上の **Stack**タブをクリックすると、このノードで稼働している アプリケーションやKubernetesのスタックの情報が確認できます。
 ![image](https://user-images.githubusercontent.com/22209835/114139481-142c2880-994a-11eb-8bd1-541edfcc335a.png)
