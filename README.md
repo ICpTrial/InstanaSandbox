@@ -1,6 +1,6 @@
 # IBM Instana Observability 
 
-IBM Observability with Instana は、アプリケーションの可観測性を提供する IBM の 新しい アプリケーション・パフォーマンス管理基盤です。
+IBM Instana Observability は、アプリケーションの可観測性を提供する IBM の 新しい アプリケーション・パフォーマンス管理基盤です。
 「監視 Monitoring」 が 受け身/消極的なニュアンスで語られるに比し、「可観測性 Observability」 は、パフォーマンスとサービスの改善を行うために、システムの内部の状態を、外部から取得できるデータによって対象を積極的に理解していく言葉です。
 
 <img width="2042" alt="image" src="https://user-images.githubusercontent.com/22209835/189787315-3586df5f-d498-4301-8196-bebf38612677.png">
