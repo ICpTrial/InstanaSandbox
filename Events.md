@@ -20,7 +20,7 @@ ___
 1. スクロールダウンしていくと、トリガーとなったイベントだけでなく、あわせて関連するコンポーネントでのイベントの情報が、**Related Events**として、時系列で提示されています。
 ![image](https://user-images.githubusercontent.com/22209835/114342452-d3751f00-9b96-11eb-8999-81a7090018a6.png)
 ここでは、dockerコンテナで稼働する**discount**サービスがオンライン→オフライン→オンラインとなっており、サービスが再起動されたことが推測されます。また、それが discountサービスで検知されてるエラー率の急増につながっていますので、これが原因となっていることが想定されます。 
-1. discount サービスの リンクをクリックして、discount のダッシュボードを開きます。左下のInfrastructure Issues & Changes（基盤の問題と変更）を確認します。ここで変更が起きている領域をマウスでせんたくし、 View Events で詳細を確認しましょう。  
+1. discount サービスの リンクをクリックして、discount のダッシュボードを開きます。左下のInfrastructure Issues & Changes（基盤の問題と変更）を確認します。ここで変更が起きている領域をマウスで選択し、 View Events で詳細を確認しましょう。  
 ![image](https://user-images.githubusercontent.com/22209835/189817211-3e97fd34-016b-44eb-b0f5-2b54d8cf9fea.png)  
 1. 発生した基盤的な変化が記録されていますので、こちらで時系列を追ってなにが起きていたかを確認することが可能です。各イベントを開くと、各サービスのメトリックやダッシュボードにアクセスすることが可能です。  
 ![image](https://user-images.githubusercontent.com/22209835/189817134-6b68a5d5-5816-46c8-9ef2-70b7f5c2b03b.png)
