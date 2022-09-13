@@ -30,7 +30,7 @@ CNCF の TAG_Obserability(※Technical Advisory Group)では、Observability を
 
 <img width="629" alt="image" src="https://user-images.githubusercontent.com/22209835/171099082-dd4d6b2a-427d-4261-a6ba-94f3ed489bc6.png">
 
-Instana も、これらの主要な３つのシグナルにもとづいて、アプリケーションの稼働状況を明らかにしていきます。Instanaは１つのエージェントで、これら３つのシグナルを自動的に取得することが可能な可観測性品です。
+Instana も、これらの主要な３つのシグナルにもとづいて、アプリケーションの稼働状況を明らかにしていきます。  Instanaは１つのエージェントで、これら３つのシグナルを自動的に取得することが可能な可観測性品です。
 
 ---
 
