@@ -142,19 +142,18 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
     <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202415567-475c5182-7cc3-46b4-84da-5bbea42d973c.png">
 1. そして、画面上方にある **Stack**を開きます。　　
     <img width="1835" alt="image" src="https://user-images.githubusercontent.com/22209835/202415764-e375ed2f-cb3e-417e-842b-5ca83c3371d0.png">
-    <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202415567-475c5182-7cc3-46b4-84da-5bbea42d973c.png">
-1. この**shipping**アプリケーションが依存している基盤のスタックが分かります。　　
-us-central1-a の クラウドゾーンで稼働している gkeのノード上で稼働しており、shippingと名付けられたコンテナの中で、shipping.jar が実行されています。
-    <img width="1834" alt="image" src="https://user-images.githubusercontent.com/22209835/202414276-131bb129-a6d2-41a4-ad0f-b4bc2082c008.png">
-1. このアプリケーションが稼働している JVMの情報（ヒープなど）を確認するためには、一番下の Executed by 1 JVMの shipping.jar を選択します。
-1. shippng.jar が実行されている JVMの スレッドの状況、ヒープメモリーの状況（メモリー・リークしていないか）、GCの状況などを把握していくことが可能です。
-    <img width="1835" alt="image" src="https://user-images.githubusercontent.com/22209835/202414793-85b30f28-8af2-448a-88fb-2a5c24855e44.png">
-
-
-
-
-
-
+1. この**catalogue-demo**アプリケーションが依存している基盤のスタックが分かります。　　
+us-central1-a の クラウドゾーンで稼働している gkeのノード上で稼働しており、catalogue と名付けられたコンテナの中で、Java が実行されています。
+    <img width="1836" alt="image" src="https://user-images.githubusercontent.com/22209835/202416465-821e6dd7-d65f-4339-82be-7cffbfada760.png">
+1. このアプリケーションが稼働している 稼働環境を確認するためには、 一番下の Executed SpringBoot App Instana Demo を選択します。
+    SpringBootのフレームワーク で取得できるメトリックが確認できます。Instanaが 取得する値は ミドルウェア製品により異なります。WebSpehreASなどでは、データベースの接続プールの情報や、スレッドプールの情報なども取得します。
+    <img width="1829" alt="image" src="https://user-images.githubusercontent.com/22209835/202416828-d4d5655c-5e1b-4efd-b75e-72563b4fae27.png">
+1. このSpringBoot の稼働するJVMの情報みるために、**Stack**から Runs 1 JVM Instana Demo を開きます。
+    <img width="1833" alt="image" src="https://user-images.githubusercontent.com/22209835/202417483-e6a9b19d-c172-4fcf-a7c5-d7ba7385bb4a.png">
+1. このJVMのスレッドプールや、ヒープの状況（メモリー・リークしていないか）、GCの情報など、確認することができます。
+    <img width="1831" alt="image" src="https://user-images.githubusercontent.com/22209835/202417948-038c26b2-cd84-488d-9ea6-8e39c41ca54f.png">
+1. 同様にして、このアプリケーションが稼働するコンテナの情報、ノードの情報などを見ていくことが可能です。
+1. また、より大きなトレンドを見るためには、右上の時間指定の場所でより長い時間を指定してみてください。
 
 ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
 次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)をみていきます。
