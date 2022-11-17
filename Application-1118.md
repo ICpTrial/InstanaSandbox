@@ -136,5 +136,25 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 1. ページを下にくだり、要求の解析画面をみると、GET /find/RD-10 という要求の処理中に、NullPointerExceptionが返されていることが分かります。状況は分かりましたので、ここからの根本原因追及は業務ログを追うことになります。
     <img width="1500" alt="image" src="https://user-images.githubusercontent.com/22209835/202409159-c5368c6c-1d2f-4b05-9209-3fab2bbf71f1.png">
 
+### 7. アプリケーションが稼働しているミドルウェア状況の確認
+1. 業務的な問題判別の一方、基盤的に問題がなかったか確認したいこともあります。その場合には、基盤チームに確認しなくても自分たち　で調べることができます。
+状況を確認したいサービスのダッシュボードを開きます。ここでは robotshop-with-frontend の依存性マップの画面から **catalogue-demo**　のダッシュボードを開きましょう。
+    <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202415567-475c5182-7cc3-46b4-84da-5bbea42d973c.png">
+1. そして、画面上方にある **Stack**を開きます。　　
+    <img width="1835" alt="image" src="https://user-images.githubusercontent.com/22209835/202415764-e375ed2f-cb3e-417e-842b-5ca83c3371d0.png">
+    <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202415567-475c5182-7cc3-46b4-84da-5bbea42d973c.png">
+1. この**shipping**アプリケーションが依存している基盤のスタックが分かります。　　
+us-central1-a の クラウドゾーンで稼働している gkeのノード上で稼働しており、shippingと名付けられたコンテナの中で、shipping.jar が実行されています。
+    <img width="1834" alt="image" src="https://user-images.githubusercontent.com/22209835/202414276-131bb129-a6d2-41a4-ad0f-b4bc2082c008.png">
+1. このアプリケーションが稼働している JVMの情報（ヒープなど）を確認するためには、一番下の Executed by 1 JVMの shipping.jar を選択します。
+1. shippng.jar が実行されている JVMの スレッドの状況、ヒープメモリーの状況（メモリー・リークしていないか）、GCの状況などを把握していくことが可能です。
+    <img width="1835" alt="image" src="https://user-images.githubusercontent.com/22209835/202414793-85b30f28-8af2-448a-88fb-2a5c24855e44.png">
+
+
+
+
+
+
+
 ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
 次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)をみていきます。
