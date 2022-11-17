@@ -63,14 +63,35 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 <img width="812" alt="image" src="https://user-images.githubusercontent.com/22209835/202373248-a9a0cb9a-5df4-4152-a028-7190bc686989.png"
 
 ### 個別サービスの状況の把握
-
 1. **Shipping**サービスのダッシュボードに遷移してきました。ここでは、システム全体の中で、この**Shipping**サービスに関わるデータだけが抽出されています。
      上段は先ほどと同様 指定された時間での 要求数と、発生したエラーの数、応答性能です。
-     下段の中央が、今度はkono **Shipping**サービスを構成する エンドポイントごとの集計です。この**Shipping**は SpringBootのアプリケーション・サーバーですので、HTTP要求のPATHごとにエンドポイントが表示されています。
+     下段の中央が、今度はkono **Shipping**サービスを構成する エンドポイントごとの集計です。  
+     この**Shipping**は SpringBootのアプリケーション・サーバーですので、HTTP要求のPATHごとにエンドポイントが表示されています。
 <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202373384-b6b9c499-5dac-41b2-bb3a-33c38e203175.png">
 
+1. この画面で Flowのタブを開きましょう。
+サービスレベルの Flow タブでは、このサービスが呼び出している または このサービスを呼び出している 周辺サービスの状況を確認できます。  
+この **Shipping** は **cart** と **cities** という２つのサービスを呼び出しているようですね。各サービスの 処理数、応答性能、エラー率も確認できます。
+<img width="1910" alt="image" src="https://user-images.githubusercontent.com/22209835/202381748-b5226390-653c-40f8-ac35-596e05ac3d99.png">
+
+2. 一旦 **Shipping**の Summary のページに戻り、下段中央 Top Endpoints の **GET /cities** を開きます。  この 特定エンドポイントの処理数や応答性能を確認できます。
 ![image](https://user-images.githubusercontent.com/22209835/114330307-62c10900-9b7c-11eb-846f-d84a3547b5a9.png)
-1. 開くと、citiesサービスの詳細が表示されています。右下には、応答時間がかかっているSQLが順に表示されています。
+1. このエンドポイントの **flow**タブを開くと、この処理の中で アクセスされている データベースのテーブル名が表示されます
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/22209835/202383877-d85ca285-0e2f-4d82-acd7-e964e96bf8b4.png">
+1.呼ばれている **cities** のリンクをクリックして、**cities** のデータベースのエンドポイントを開きます。
+※ このサービスは データベース名とテーブル名が同じなので分かりづらいですが、いまはエンドポイント（テーブル）レベルの ダッシュボードが開かれています。
+この下段右側には、このテーブルにアクセスしている SQLが 応答性能順、コール数順 に表示されています。
+<img width="1843" alt="image" src="https://user-images.githubusercontent.com/22209835/202384207-60184c86-42a4-4190-97a3-b4c000c36912.png">
+1. この **cities** で **flow**タブを開くと、この cities テーブルを呼んでいる 処理が分かります。
+<img width="963" alt="image" src="https://user-images.githubusercontent.com/22209835/202384843-a24df207-b3ff-4bb7-abdd-13da1d854d74.png">
+1. タイトル行にあるリンク から、一つ上のサービスレベル（データベース・レベル）の **cities*** を開いてみてください。
+この
+1. タイトル行にあるリンク から、一つ上のサービスレベル（データベース・レベル）の **cities*** を開いてみてください。
+1. タイトル行にあるリンク から、一つ上のサービスレベル（データベース・レベル）の **cities*** を開いてみてください。
+この
+
+
+3. 開くと、citiesサービスの詳細が表示されています。右下には、応答時間がかかっているSQLが順に表示されています。
 ![image](https://user-images.githubusercontent.com/22209835/114330341-73717f00-9b7c-11eb-981b-2dacf702c549.png)
  
 ---
