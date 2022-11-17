@@ -86,39 +86,55 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 下段中央の Top Endpointsから、この **cities**データベースには **codes**とがあり、 **codes**の方が 非常に応答性能が良いことが分かります。
     <img width="964" alt="image" src="https://user-images.githubusercontent.com/22209835/202385351-f260e934-a01e-41a8-a049-1048e23e6996.png">
 
-
 このように、さまざまなコンポーネントが リンクで柔軟につながっており、リンクを辿ることで、サービスやエンドポイント それぞれで 状況を把握いただくことが可能です。
- 
----
-### アプリケーションの問題切り分け
 
-1. **Summary**のダッシュボードに戻ります。
-エラーとなっているコールがありますので、ここを確認していきましょう。  
-もしエラーがない状況でしたら、右上のボタンで表示時間を１時間や６時間、１２時間などに広げてみてください。  
-![image](https://user-images.githubusercontent.com/22209835/114329793-3e186180-9b7b-11eb-9dd4-cd363cd1ee1a.png)
-1. 中央のエラーコール率のグラフの山をマウスで選択して、**View in Analyze**で解析画面で確認していきます。  
-タイミングによって、起きているエラーは異なりますので、みなさんの画面で確認しているエラーを選択して開いて下さい。
-![image](https://user-images.githubusercontent.com/22209835/114329771-2e008200-9b7b-11eb-8da1-58dab02b41c3.png)
-1. アプリケーションを理解していれば、より具体的にアクションが採れるかもしれませんが、ここでは、一番エラー数の多い上の **eum-frontend**を選択します。  
-タイミングによって起きているエラーは異なりますので、環境に応じて 一番多いエラーを選択して開いて下さい。
-![image](https://user-images.githubusercontent.com/22209835/114329840-5c7e5d00-9b7b-11eb-9926-f7f1f0cc29c1.png)
-1. ここでは、エラーを返している **eum-frontend**の要求がリストされています。  
-軒並み応答性能が5000ミリ秒を超えてエラーとなっているようですね。これらについて詳細を確認していきましょう。  
-一番上のエラー要求をクリックして、要求の中身をみていきます。
-![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
-1. この `GET /zh_cn/shop`要求の詳細がわかります。中身を確認しながらスクロールダウンしてください。
-![image](https://user-images.githubusercontent.com/22209835/114329913-7c158580-9b7b-11eb-8843-5767842cbb98.png)
-1. タイムラインのビューでは、この要求に関連して実行された マイクロサービスの呼び出し関係が可視化されています。
-![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
-1. さらにスクロールダウンしていくと、コールのビューでは、各マイクロサービスの呼び出しの依存関係 呼び出し元と呼び出し先が確認できます。
-![image](https://user-images.githubusercontent.com/22209835/114329959-a0716200-9b7b-11eb-8eaa-bd8b8fe06ecf.png)
-1. マイクロサービスの一番下で、DATABASE（MySQLサービス）への CONNECT要求が5000ミリ秒でタイム・アウトし、エラーなっているのが分かります。
-右のペーンには、エラーの内容と、問題が発生したコードのスタックトレースが表示されています。
-![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
-1. 問題となっている MySQLサービスをクリックすると、当該時間帯に Offlineが検知されているのが分かります。
-![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
-このようなかたちで、エラー応答となったマイクロサービスの依存関係を解析した上で、問題の根本原因の分析へと絞り込んでいくことが可能です。
+
+### 4. 解析画面の利用
+1. Instanaでは、多様な形で絞り込みを行い、要求を解析するための 解析画面 があります。メニューから 虫眼鏡アイコンの **Analytics**を選択ください。
+    <img width="1903" alt="image" src="https://user-images.githubusercontent.com/22209835/202394607-1a2439e5-41e5-4b60-bf58-f27c5da30d4f.png">
+1. ここでは、先ほどの**robotshop with frontend** に含まれる **catalgoue-demo**サービスの状況を、Endpoint Name ごとに確認します。 
+   以下を参考に フィルターを設定してみてください。 Application>Name = Robotshop with Frontend **AND** Service>Name = catalogue-demo  
+   グルーピング設定 Endpoint>Name
+    <img width="1234" alt="image" src="https://user-images.githubusercontent.com/22209835/202397444-c4054f23-d13b-4cb2-8b7d-f14bc10bf76a.png">
+1. 以下のように 出力が行われると思います。
+    <img width="1825" alt="image" src="https://user-images.githubusercontent.com/22209835/202398538-030fba55-94d2-46ac-9936-2baf43e177f9.png">
+1. 一番上の グループ GET /prodyct/{sku} 展開します。
+　　　　　　　 <img width="1809" alt="image" src="https://user-images.githubusercontent.com/22209835/202398931-9ec43935-8bb8-411e-ad6c-dae34b1fe0ea.png">
+1. さらに 左のフィルターで応答性能が 500ミリ秒を超えているものに絞り込みます。 （注：機能をご理解いただくためにやっているので、あまり解析自体には深い意味はありません。遅い応答を探しているくらいに理解ください。）
+    <img width="1818" alt="image" src="https://user-images.githubusercontent.com/22209835/202399471-3fe0c089-f0bf-4ab7-b747-35fdbe19a5ba.png">
+1. 絞り込まれた要求のなかで、赤になっているのは エラーとして返された応答、緑は正常応答です。問題判別は次の節でみるので、一旦、正常系応答を開いてみます。　　
+処理のタイムラインで、どこで処理に時間がかかっているかが分かります。
+    <img width="1835" alt="image" src="https://user-images.githubusercontent.com/22209835/202400364-e2ecc3b3-c12c-4951-ba29-4d9d0e25b38d.png">  
+1. さらにページの下の方に遷移すると、どこのサービスのどこのエンド・ポイントでの処理で時間がかかっているか分かります。
+    <img width="938" alt="image" src="https://user-images.githubusercontent.com/22209835/202400677-19a51c9b-58e0-4833-b662-2453669f3306.png">
+**cart**から呼び出された**catalogue-demo**の処理に多くの時間がかかっていることが分かります。そこから呼び出された処理は短時間で終わっていますので、処理が遅かった理由を探すためには、この**catalogude-demo**でcommand を発行するまでに、なにをやっていたかを調べる形になります。正常時でエラーも出ていない場合は、Instanaではさらなる深堀りは難しいので、別途業務ログなどをより深く掘り下げて調べる必要があります。
 
 ---
+### 5. エラーとなった要求の状況把握
+1. いまいちど、4で調べた フィルター条件に戻り、今度はエラーとなっていた 要求を確認してみます。
+    <img width="1600" alt="image" src="https://user-images.githubusercontent.com/22209835/202402599-4701410f-f944-456c-8aae-43f608d86379.png">
+1. 同じように タイムラインが表示されますが、エラーとなった要求には 赤い！のマークがついています。
+    <img width="1606" alt="image" src="https://user-images.githubusercontent.com/22209835/202402925-72f0bac3-30a9-4e02-bdd3-51b128f50b10.png">
+1. ページを下に下り、どこのサービスのどこのエンド・ポイントでの処理で時間がかかっているか分かります。
+このシーケンス図を見ていくと、一番下の 赤色の逆三角マーク にフォーカスを当てると　”Error occured during fetching discount from DB: Unable to acquire JDBC Connection”とエラー・メッセージが出ており、最後の **discountdb** に 接続 CONNECT しようとしてエラーとなったことが分かります。また、それを契機に呼び出し元に、それぞれエラーを返していることが分かります。　　
+    <img width="1282" alt="image" src="https://user-images.githubusercontent.com/22209835/202403995-524b6d5d-fe03-4c6f-ad28-cd858772187f.png">
+1. 実際には、原因追及のために、このdiscountdbが なぜ接続を受け付けなかったか調査することになり、**discountdb** をクリックして、 Infrastructure Issue＆Changes でなにかリリースなどしていないかなど確認することになります。ここになにも出ていない場合には、ミドルウェア側のログの調査が必要になります。
+    <img width="1830" alt="image" src="https://user-images.githubusercontent.com/22209835/202405087-26e60797-22be-4950-b06f-cc5e07a73b88.png">
+
+### 6. その他のエラー要求の特定方法
+1. 先ほどは 解析画面のなかで、(事前に設定していた）時間の絞り込みと、アプリケーションとサービスを絞り込んで、応答が遅くエラーとなっていた処理を見つけました。  
+実際は これまで見てきたダッシュボードの上段中央に、エラーが発生している要求を示すグラフがあったので、各サービス、各エンドポイントにおいて、エラーの要求を早期に見つけることができます。　　
+エラーを示すグラフに フォーカスを当てて 虫眼鏡マークを選択することで、エラーとなった要求の解析画面に飛びます。  
+ここでは 指定時間後半にある エラー要求をみてみましょう。  
+    <img width="1833" alt="image" src="https://user-images.githubusercontent.com/22209835/202406846-7593a2a5-a5fe-4043-8925-7437b33a3df0.png">
+1. エラー画面にフォーカスを当てて飛んだ場合には、自動的に Call>Erroneous is true(エラーとなった要求）のフィルターが設定されており、エラー要求だけを探すことが可能です（自分で設定もできます）。
+    <img width="973" alt="image" src="https://user-images.githubusercontent.com/22209835/202408137-36a1de85-c55c-4269-b986-08b589e48652.png">
+1. ここでは **ratings** サービスで発生したエラーをみてみましょう。一番上のリンクを開きます。
+    <img width="1604" alt="image" src="https://user-images.githubusercontent.com/22209835/202407387-231afb49-ef18-4b20-900e-b1b89733095a.png">
+1. このエラー要求の呼び出しシーケンスが確認できます。
+    <img width="1836" alt="image" src="https://user-images.githubusercontent.com/22209835/202408435-b95d510d-0357-402e-8506-f588ef1cbfc6.png">
+1. ページを下にくだり、要求の解析画面をみると、GET /find/RD-10 という要求の処理中に、NullPointerExceptionが返されていることが分かります。状況は分かりましたので、ここからの根本原因追及は業務ログを追うことになります。
+    <img width="1500" alt="image" src="https://user-images.githubusercontent.com/22209835/202409159-c5368c6c-1d2f-4b05-9209-3fab2bbf71f1.png">
+
 ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
 次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)をみていきます。
