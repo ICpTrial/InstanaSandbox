@@ -56,34 +56,37 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
     <img width="1829" alt="image" src="https://user-images.githubusercontent.com/22209835/202371686-d2f83968-1cef-42fb-b69b-fb3a8c4a1aee.png">
 1. 左上の None と表示されている メニューを選択することで、応答性能が遅いサービス(Max Latency)のアイコンを大きくしたり、要求数の大きいサービス(Incoming Calls)を大きくしたり、依存関係の表示を変更したりきますので、いろいろ触ってみてください。　　
     <img width="1829" alt="image" src="https://user-images.githubusercontent.com/22209835/202372452-c24c98ff-9348-48dd-83cf-5ba8739d20b2.png">
-1. 次依存関係ビューから サービスにドリルダウンしてみます。ここでは左側にある **shipping**サービスを開いてみましょう。
+1. 次依存関係ビューから サービスにドリルダウンしてみます。  
+ここでは左側にある **shipping**サービスを クリックして **Go to Dashboard** を選びます。
     <img width="812" alt="image" src="https://user-images.githubusercontent.com/22209835/202373248-a9a0cb9a-5df4-4152-a028-7190bc686989.png"> 
 
-### 個別サービスの状況の把握
-1. **Shipping**サービスのダッシュボードに遷移してきました。ここでは、システム全体の中で、この**Shipping**サービスに関わるデータだけが抽出されています。
-     上段は先ほどと同様 指定された時間での 要求数と、発生したエラーの数、応答性能です。
-     下段の中央が、今度はkono **Shipping**サービスを構成する エンドポイントごとの集計です。  
-     この**Shipping**は SpringBootのアプリケーション・サーバーですので、HTTP要求のPATHごとにエンドポイントが表示されています。
-<img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202373384-b6b9c499-5dac-41b2-bb3a-33c38e203175.png">
+### 4. 個別サービスの状況の把握
+1. **Shipping**サービスのダッシュボードに遷移してきました。  ここでは、システム全体の中で、この**Shipping**サービスに関わるデータだけが抽出されています。
+     上段は先ほどと同様 指定された時間での 要求数と、発生したエラーの数、応答性能です。  
+     下段の中央が、この **Shipping**サービスを構成する エンドポイントごとの集計です。 この**Shipping**は SpringBootのアプリケーション・サーバーですので、HTTP要求のPATHごとにエンドポイントが表示されています。
+    <img width="1839" alt="image" src="https://user-images.githubusercontent.com/22209835/202373384-b6b9c499-5dac-41b2-bb3a-33c38e203175.png">
 
 1. この画面で Flowのタブを開きましょう。
 サービスレベルの Flow タブでは、このサービスが呼び出している または このサービスを呼び出している 周辺サービスの状況を確認できます。  
 この **Shipping** は **cart** と **cities** という２つのサービスを呼び出しているようですね。各サービスの 処理数、応答性能、エラー率も確認できます。
-<img width="1910" alt="image" src="https://user-images.githubusercontent.com/22209835/202381748-b5226390-653c-40f8-ac35-596e05ac3d99.png">
-
-2. 一旦 **Shipping**の Summary のページに戻り、下段中央 Top Endpoints の **GET /cities** を開きます。  この 特定エンドポイントの処理数や応答性能を確認できます。
-![image](https://user-images.githubusercontent.com/22209835/114330307-62c10900-9b7c-11eb-846f-d84a3547b5a9.png)
+    <img width="1910" alt="image" src="https://user-images.githubusercontent.com/22209835/202381748-b5226390-653c-40f8-ac35-596e05ac3d99.png">
+1. 特定エンドポイントの処理数や応答性能を確認するため、一旦 **Shipping**の Summary のページに戻り、下段中央 Top Endpoints の **GET /cities** のリンクを開きます。 
+    <img width="1837" alt="image" src="https://user-images.githubusercontent.com/22209835/202391960-f889aa9f-f109-489e-9f1d-04d95c0ce3f6.png">
+1. この **GET /cities** のみの処理数、エラー数、応答性能が表示されます
+    <img width="1832" alt="image" src="https://user-images.githubusercontent.com/22209835/202392372-147dd250-e5d6-4ba6-8dd2-d9ab51825850.png">
 1. このエンドポイントの **flow**タブを開くと、この処理の中で アクセスされている データベースのテーブル名が表示されます
-<img width="956" alt="image" src="https://user-images.githubusercontent.com/22209835/202383877-d85ca285-0e2f-4d82-acd7-e964e96bf8b4.png">
-1.呼ばれている **cities** のリンクをクリックして、**cities** のデータベースのエンドポイントを開きます。
-※ このサービスは データベース名とテーブル名が同じなので分かりづらいですが、いまはエンドポイント（テーブル）レベルの ダッシュボードが開かれています。
+    <img width="956" alt="image" src="https://user-images.githubusercontent.com/22209835/202383877-d85ca285-0e2f-4d82-acd7-e964e96bf8b4.png"> 
+1. 呼ばれている **cities** のリンクをクリックして、**cities** のデータベース・テーブルのエンドポイントを開きます。  
+※ このサービスは データベース名とテーブル名が同じなので分かりづらいですが、いまはエンドポイント（テーブル）レベルの ダッシュボードが開かれています。  
 この下段右側には、このテーブルにアクセスしている SQLが 応答性能順、コール数順 に表示されています。
-<img width="1843" alt="image" src="https://user-images.githubusercontent.com/22209835/202384207-60184c86-42a4-4190-97a3-b4c000c36912.png">
+    <img width="1843" alt="image" src="https://user-images.githubusercontent.com/22209835/202384207-60184c86-42a4-4190-97a3-b4c000c36912.png">
 1. この **cities** で **flow**タブを開くと、この cities テーブルを呼んでいる 処理が分かります。
-<img width="963" alt="image" src="https://user-images.githubusercontent.com/22209835/202384843-a24df207-b3ff-4bb7-abdd-13da1d854d74.png">
-1. タイトル行にあるリンク から、一つ上のサービスレベル（データベース・レベル）の **cities*** を開いてみてください。
+    <img width="963" alt="image" src="https://user-images.githubusercontent.com/22209835/202384843-a24df207-b3ff-4bb7-abdd-13da1d854d74.png">
+1. タイトル行にあるリンク から、一つ上のサービスレベル（データベース・レベル）の **cities** を開いてみてください。  
 下段中央の Top Endpointsから、この **cities**データベースには **codes**とがあり、 **codes**の方が 非常に応答性能が良いことが分かります。
-<img width="964" alt="image" src="https://user-images.githubusercontent.com/22209835/202385351-f260e934-a01e-41a8-a049-1048e23e6996.png">
+    <img width="964" alt="image" src="https://user-images.githubusercontent.com/22209835/202385351-f260e934-a01e-41a8-a049-1048e23e6996.png">
+
+
 このように、さまざまなコンポーネントが リンクで柔軟につながっており、リンクを辿ることで、サービスやエンドポイント それぞれで 状況を把握いただくことが可能です。
  
 ---
