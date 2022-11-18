@@ -51,3 +51,4 @@ Play with Instanaは、グローバル環境で日本語設定に切り替えら
 |2|[Applications](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md)|マイクロサービス・アプリケーション稼働状況の可視化|
 |3|[WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)|エンドユーザー・挙動の理解|
 |4|[Events](https://github.com/ICpTrial/InstanaSandbox/blob/main/Events.md)|AIおよび機械学習により通知されたイベントからの問題判別|
+|※|[Applications updated](https://github.com/ICpTrial/InstanaSandbox/blob/main/Application-1118.md)|1118向けコンテンツ|
