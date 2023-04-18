@@ -22,6 +22,7 @@
       instana-agent-w925g   1/1     Running   0          172m　　　　
       instana-agent-xbcx4   1/1     Running   0          172m　　　　
       ```
+      
     1. 以下のコマンドで、Agent のPod のログを参照し、正常に Instana バックエンドに接続できたことを確認します
       ```
       oc logs -f instana-agent-xxxxx -n instana-agent
