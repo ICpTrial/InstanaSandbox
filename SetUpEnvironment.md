@@ -81,5 +81,30 @@
     
     Happy quoting!
     ```
-    
-      
+ 
+ 1. Instana Automation Webhook　が　正常に稼働ししていることを、Pod のログから確認します。
+    ```
+    ~ $ oc get pods -n instana-autotrace-webhook
+    NAME                                         READY   STATUS    RESTARTS   AGE
+    instana-autotrace-webhook-5687b477d7-h9zk5   1/1     Running   0          14h
+    ~ $ oc logs -f instana-autotrace-webhook-5687b477d7-h9zk5 -n instana-autotrace-webhook
+    ・・・ (略）　
+    09:02:24.056 INFO  |- o.s.b.a.e.web.EndpointLinksResolver: Exposing 1 endpoint(s) beneath base path '/actuator'
+    09:02:25.813 INFO  |- o.s.b.w.e.netty.NettyWebServer: Netty started on port 42650
+    09:02:25.898 INFO  |- c.i.k.a.w.AutotraceMutatingWebhookApplication: Started AutotraceMutatingWebhookApplication in 8.042 seconds (process running for 10.327)
+    09:02:45.059 INFO  |- DefaultPodSpecTransformation: Configuration is use libinstana init
+    09:02:45.093 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
+    09:02:45.336 INFO  |- [AdmissionReview 57935dc9-1eb2-4ce9-8adb-58ea0f9f8ec3] Applied transformation DefaultDeploymentTransformation to the Deployment 'calico-typha/calico-system'
+    09:02:45.867 INFO  |- DefaultPodSpecTransformation: Configuration is use libinstana init
+    09:02:45.868 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
+    09:02:46.622 INFO  |- [AdmissionReview f8ae1f92-5d1b-47c0-84e3-3d5a86975335] Applied transformation DefaultDaemonSetTransformation to the DaemonSet 'calico-node/calico-system'
+    09:02:47.091 INFO  |- DefaultPodSpecTransformation: Configuration is use libinstana init
+    09:02:47.091 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
+    09:02:47.106 INFO  |- [AdmissionReview 60ad7d06-dc3c-4530-a8ee-dbf83e40318d] Applied transformation DefaultDeploymentTransformation to the Deployment 'calico-kube-controllers/calico-system'
+    09:04:25.921 INFO  |- DefaultPodSpecTransformation: Configuration is use libinstana init
+    09:04:25.925 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
+    09:04:25.951 INFO  |- [AdmissionReview 55e6ae9c-5133-4e58-88d8-d12adcf907d3] Applied transformation DefaultPodTransformation to the Pod 'qotd-author-f44cb87ff-xxxxx'
+    09:04:33.153 INFO  |- DefaultPodSpecTransformation: Configuration is use libinstana init
+    09:04:33.162 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
+    （略）
+    ```
