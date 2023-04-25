@@ -109,3 +109,8 @@
     09:04:33.162 INFO  |- DefaultPodSpecTransformation: Configuration is use autotrace nodejs
     （略）
     ```
+
+1. Instana LDAP認証の設定
+デフォルトで作成される admin@instana.local でハンズオンをする場合は、特に実施しなくても問題ありません。
+権限の分離などのデモや検証を行いたい場合、ユーザーごとに ユーザーIDを払い出したい場合には、以下のBoxnoteの手順に従って、実施ください。
+https://ibm.box.com/s/d7d4gq29u2q33oyq6kh99l8ae9njfro1
