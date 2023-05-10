@@ -53,12 +53,18 @@
     ※ Instana Autotrace Webhookは、すでに稼働しているアプリケーションには有効とならないため、すでに稼働しているアプリケーションに対してInstana AutoTrace を設定するためには、Podを再起動してください。
 
 1. Quote of The Day アプリケーションの払出し
-    1. 監視対象のアプリケーションとして、払い出されたOpenShift環境に HELMで Quote of The Day を払出します
-      * host の情報は環境によって異なるため、払い出した環境の情報を設定します
-      * rokcCluster=true を定義します
+    監視対象のアプリケーションとして、払い出されたOpenShift環境に HELMで Quote of The Day を払出します。
+    Quote of the Day の同ん丹生ガイドは [GitLab上のこのレポジトリ](https://gitlab.com/quote-of-the-day/quote-of-the-day/-/blob/master/helm_deployment.md) にあります。
     
-    1. Quote of the Day のhelmチャートは [GitLab上のこのレポジトリ](https://gitlab.com/quote-of-the-day/quote-of-the-day/-/blob/master/helm_deployment.md) から入手可能です。
-    　　　　
+    1. Quote of the Day のhelm のレポジトリを登録します。
+    ```
+    helm repo add qotd https://gitlab.com/api/v4/projects/26143345/packages/helm/stable
+    helm repo update
+    ```
+
+    1. 実際に導入します。
+      * host の情報は環境によって異なるため、払い出した環境の情報を設定します
+      * rokcCluster=true を定義します  　　　　
 
     ```
     helm install qotd-chart qotd/qotd \
