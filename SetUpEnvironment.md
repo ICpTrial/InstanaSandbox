@@ -57,8 +57,8 @@
       * host の情報は環境によって異なるため、払い出した環境の情報を設定します
       * rokcCluster=true を定義します
     
-    1. Quote of the Day のhelmチャートはこちらから入手可能です。
-    　　　　https://gitlab.com/quote-of-the-day/quote-of-the-day/-/blob/master/helm_deployment.md
+    1. Quote of the Day のhelmチャートは [GitLab上のこのレポジトリ](https://gitlab.com/quote-of-the-day/quote-of-the-day/-/blob/master/helm_deployment.md) から入手可能です。
+    　　　　
 
     ```
     helm install qotd-chart qotd/qotd \
